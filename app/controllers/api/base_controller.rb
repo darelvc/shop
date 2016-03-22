@@ -1,5 +1,5 @@
 class Api::BaseController < ApplicationController
-  # before_action :authenticate
+  before_action :authenticate
 
   attr_reader :current_user
 

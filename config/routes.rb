@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       resource :avatar, only: :update
     end
 
+    resources :purchases
+
     resource :session, only: [:create, :destroy]
   end
 end
