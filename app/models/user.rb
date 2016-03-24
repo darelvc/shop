@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
 
   has_one :auth_token, dependent: :destroy
 
+  has_many :purchases
+
+  has_many :orders
+
   validates :name, :email, presence: true, uniqueness: { case_sensitive: false }
 
   has_attached_file :avatar,

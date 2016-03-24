@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :products, only: [:index, :show, :create, :update]
+    resources :products, only: [:index, :show, :create, :update, :destroy]
 
     resources :users, only: [:index, :show, :create]
 
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
 
     resources :purchases
+
+    resources :orders, except: [:new, :update, :edit]
 
     resource :session, only: [:create, :destroy]
   end

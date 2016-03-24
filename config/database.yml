@@ -6,8 +6,8 @@ default: &default
 development:
   <<: *default
   database: shop_development
-  username: kopilka_rec
-  password: dkvs43gh4
+  username: darelvc
+  password: DKvs43gh4
   host: localhost
   port: 5432
 

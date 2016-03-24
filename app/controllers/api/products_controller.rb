@@ -1,5 +1,9 @@
 class Api::ProductsController < Api::BaseController
   private
+  def build_resource
+    @product = Product.new resource_params
+  end
+
   def collection
     @products ||= Product.all
   end
@@ -7,5 +11,8 @@ class Api::ProductsController < Api::BaseController
   def resource
     @product ||= Product.find params[:id]
   end
-end
 
+  def resource_params
+    params.require(:product).permit(:name, :description, :price)
+  end
+end
